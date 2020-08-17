@@ -1,7 +1,7 @@
 <!-- 页面主入口 -->
 <template>
 <div class="app-layout app-layout--main">
-  <Header></Header>
+  <!-- <Header></Header> -->
   <el-menu
     class="app-menu"
     :default-active="currentSelect"
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+// import Header from './components/Header.vue'
 import menu from './menu'
 
 const routeMap = {} // menuName -> to
@@ -34,9 +34,9 @@ export default {
       currentSelect: ''
     }
   },
-  components: {
-    Header
-  },
+  // components: {
+  //   Header
+  // },
   created() {
     this.updateSelectByRoute()
   },

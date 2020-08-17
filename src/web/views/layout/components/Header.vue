@@ -19,8 +19,8 @@ export default {
 
 <style lang="scss">
 .app-header {
-  background-color: $color-primary;
-  color: #fff;
+  // background-color: $color-primary;
+  color: $color-primary;
   display: flex;
   justify-content: space-between;
   // box-shadow: 1px 1px 6px rgba(0, 0, 0, .4);

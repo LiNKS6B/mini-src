@@ -12,6 +12,8 @@ import {
   Tag,
   Timeline,
   TimelineItem
+  // RadioGroup,
+  // RadioButton
   // Row,
   // Col
 } from 'element-ui'
@@ -28,6 +30,8 @@ Vue.use(Pagination)
 Vue.use(Tag)
 Vue.use(Timeline)
 Vue.use(TimelineItem)
+// Vue.use(RadioGroup)
+// Vue.use(RadioButton)
 // Vue.use(Row)
 // Vue.use(Col)
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 500 }
