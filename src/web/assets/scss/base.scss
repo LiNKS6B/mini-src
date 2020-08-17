@@ -1,0 +1,78 @@
+// 边距相关
+@for $i from 1 through 5 {
+  .mb#{$i * 5} {
+    margin-bottom: #{$i * 5}px;
+  }
+  .ml#{$i * 5} {
+    margin-left: #{$i * 5}px;
+  }
+  .mr#{$i * 5} {
+    margin-right: #{$i * 5}px;
+  }
+  .mt#{$i * 5} {
+    margin-top: #{$i * 5}px;
+  }
+  .mg#{$i * 5} {
+    margin: #{$i * 5}px;
+  }
+
+  .pb#{$i * 5} {
+    padding-bottom: #{$i * 5}px;
+  }
+  .pl#{$i * 5} {
+    padding-left: #{$i * 5}px;
+  }
+  .pr#{$i * 5} {
+    padding-right: #{$i * 5}px;
+  }
+  .pt#{$i * 5} {
+    padding-top: #{$i * 5}px;
+  }
+  .pd#{$i * 5} {
+    padding: #{$i * 5}px;
+  }
+}
+
+// 字体大小
+.font-sm {
+  font-size: 12px;
+}
+
+.font-m {
+  font-size: 14px;
+}
+
+.font-l {
+  font-size: 16px;
+}
+
+.font-xl {
+  font-size: 18px;
+}
+
+.font-xxl {
+  font-size: 20px;
+}
+
+// 其他原子类
+.wrapper {
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-block {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;
+}

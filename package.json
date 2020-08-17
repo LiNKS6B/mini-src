@@ -1,0 +1,44 @@
+{
+  "name": "mini-src",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve ./src/web/main.js",
+    "theme": "et -c ./src/web/assets/scss/element-variables.scss",
+    "lint": "vue-cli-service lint"
+  },
+  "husky": {
+    "hooks": {
+    }
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.0",
+    "@vue/cli-plugin-eslint": "^4.4.0",
+    "@vue/cli-plugin-router": "^4.4.0",
+    "@vue/cli-plugin-vuex": "^4.4.0",
+    "@vue/cli-service": "^4.4.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "element-theme-chalk": "^2.13.2",
+    "element-themex": "^1.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.2.5",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11",
+    "@types/node": "^14.0.27"
+  }
+}

@@ -1,0 +1,30 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+
+a, a:focus, a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  // li {
+  //   min-height: $row-sm;
+  // }
+}

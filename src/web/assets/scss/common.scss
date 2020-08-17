@@ -1,0 +1,40 @@
+.app-layout {
+  height: 100%;
+  width: 100%;
+  &--main {
+    .app-header {
+      position: relative;
+      z-index: 1;
+      height: $nav-height;
+      line-height: $nav-height;
+    }
+    .app-menu {
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, .2);
+    }
+    .app-page {
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .app-layout__view {
+      height: calc(100% - #{2 * $nav-height});
+    }
+    // .left-side {
+    //   width: 200px;
+    //   height: calc(100% - 50px);
+    //   float: left;
+    //   padding: 40px 0;
+    //   background-color: $light-bg;
+    // }
+    .app-section {
+      &__header {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.app-page {
+  width: 100%;
+  height: 100%;
+}
+
