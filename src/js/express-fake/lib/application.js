@@ -1,7 +1,10 @@
 const Router = require('./Router')
 const methods = require('./methods')
+const http = require('http')
 
-module.exports = function App() {}
+function App() {}
+
+module.exports = App
 
 const proto = App.prototype
 
@@ -30,13 +33,8 @@ methods.forEach(method => {
      */
     const route = this._router.route(path)
     route[method](...handlers)
-    // http
-    //   .createServer((req, res) => {
-    //     this.Router.handle(req, res)
-    //   })
-    //   .listen(...args)
+    return this
   }
-  
 })
 
 /**
@@ -45,7 +43,7 @@ methods.forEach(method => {
 proto.handle = function(req, res) {
   // 源代码中是finalhandler库，此处简化
   const done = function() {
-    res.end('Unhandle!!')
+    res.end(Buffer.from('Unhandle!!'))
   }
   if (!this._router) {
     // 没有handler

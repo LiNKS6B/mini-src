@@ -1,13 +1,16 @@
 const Layer = require('./Layer')
 const Route = require('./Route')
 
-module.exports = function proto() {
+function proto() {
   function router(req, res, next) {
-    this.stack = []
+    // this.stack = []
   }
+  router.stack = []
   Object.setPrototypeOf(router, proto)
   return router
 }
+
+module.exports = proto
 
 /**
  * 创建一层Layer，并关联一个新的Route
@@ -22,25 +25,28 @@ proto.route = function(path) {
 
 proto.handle = function(req, res, done) {
   let i = 0
-  let match = false
+  const self = this
 
-  if (!this.stack.length) {
-    done()
-    return
-  }
+  next()
 
   function next() {
-    
-    while (!match && i < this.stack.length) {
-      const layer = this.stack[i++]
-      const route = layer.route
+    let layer = null
+    let route = null
+    let match = false
+    /**
+     * 跳过router route 报错等处理细节
+     */
+    while (!match && i < self.stack.length) {
+      layer = self.stack[i++]
+      route = layer.route
       match = layer.match(req.url)
-      // layer.handle(req, res, next)
     }
 
-    if (!match) {
-      
+    if (match && route.methods[req.method.toLowerCase()]) {
+      layer.handle(req, res, next)
+      return
     }
+    // 没有匹配到或匹配到了url但没有method
+    return done()
   }
-
 }

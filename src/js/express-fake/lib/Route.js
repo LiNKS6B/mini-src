@@ -1,7 +1,7 @@
 const methods = require('./methods')
 const Layer = require('./Layer')
 
-module.exports = function Route(path) {
+function Route(path) {
   this.path = path
   this.stack = []
   this.methods = {} // 标志当前path下所注册的http方法handler
@@ -14,13 +14,40 @@ methods.forEach(method => {
     handlers.forEach(handler => {
       const layer = new Layer(this.path, handler)
       layer.method = method
+      this.methods[method] = true
       this.stack.push(layer)
       console.log(`Route: register a new ${method.toUpperCase()} handler`)
     })
-    return route
+    return this
   }
 })
 
-proto.dispatch = function() {
-  console.log('dispatch')
+proto.dispatch = function(req, res, done) {
+  let i = 0
+  const self = this
+
+  if (!this.stack.length) {
+    return done()
+  }
+
+  next()
+
+  function next() {
+    /**
+     * 跳过报错等处理细节
+     */
+    const layer = self.stack[i++]
+
+    if (!layer) {
+      return done()
+    }
+
+    if (layer.method !== req.method.toLowerCase()) {
+      return next()
+    }
+
+    layer.handle(req, res, done)
+  }
 }
+
+module.exports = Route

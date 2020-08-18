@@ -1,1 +1,1 @@
-// require('./express-fake/test/index')
+require('./src/js/express-fake/test/index')

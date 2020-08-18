@@ -1,9 +1,7 @@
-const http = require('http')
+const App = require('./application')
 
-// module.exports = function createApplication() {
-//   return new App()
-// }
+function createApplication() {
+  return new App()
+}
 
-// function Router() {
-
-// }
+module.exports = createApplication
